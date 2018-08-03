@@ -50,17 +50,4 @@ public class TestController {
 		/* } */
 		return filter;
 	}
-
-	@RequestMapping(value = "validateformInteger", method = RequestMethod.POST)
-	// public @ResponseBody String validateForm(@Valid TestBean
-	// testModel,BindingResult result, HttpServletResponse
-	// response,HttpServletRequest request) throws ValidationException {
-	public @ResponseBody Integer validateFormInteger(@ModelAttribute TestModel testModel, HttpServletResponse response,
-			HttpServletRequest request) {
-		String filter = "";
-
-		filter = testModel.getFilter();
-		return 1;
-	}
-
 }
