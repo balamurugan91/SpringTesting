@@ -7,9 +7,7 @@ import java.lang.annotation.Target;
 
 @Target( { ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Length {
+public @interface Decimal {
 
-	int minLength() default 0;
-	int maxLength() default 0;
-	
+	boolean allowEmpty() default true;
 }

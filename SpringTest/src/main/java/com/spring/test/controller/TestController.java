@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.test.Exception.ServerSideValidationException;
+import com.spring.test.exception.ServerSideValidationException;
 import com.spring.test.model.TestModel;
 import com.spring.test.validation.ValidationUtils;
 
@@ -28,21 +28,23 @@ public class TestController {
 	// testModel,BindingResult result, HttpServletResponse
 	// response,HttpServletRequest request) throws ValidationException {
 	public @ResponseBody String validateForm(@ModelAttribute TestModel testModel, HttpServletResponse response,
-			HttpServletRequest request) {
+			HttpServletRequest request) throws ServerSideValidationException {
 		String filter = "";
-		try {
 
 		ValidationUtils.validateModel(testModel);
 
 		filter = testModel.getFilter();
 		System.out.println(filter);
-		/* } */
-		
-		}
-		catch( ServerSideValidationException e )
-		{
-			
-		}
+
 		return filter;
 	}
+	
+	
+	@RequestMapping(value = "errorPage", method = RequestMethod.GET)
+	public ModelAndView errorPage() {
+		System.out.println("inside error apge");
+		return new ModelAndView("errorPage");
+	}
+	
+	
 }

@@ -1,4 +1,4 @@
-package com.spring.test.Exception;
+package com.spring.test.exception;
 
 public class ServerSideValidationException extends Exception {
 
@@ -9,6 +9,10 @@ public class ServerSideValidationException extends Exception {
 
 	public ServerSideValidationException(String message) {
 		super(message);
+	}
+	
+	public ServerSideValidationException() {
+		super();
 	}
 	
 }

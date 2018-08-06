@@ -12,7 +12,7 @@
 		http://www.springframework.org/schema/context/spring-context.xsd">
 
          <context:component-scan
-            base-package="com.spring.test.controller,com.spring.test.exceptions.handler,com.spring.test.advice"/>  
+            base-package="com.spring.test.controller,com.spring.test.exceptions.handler,com.spring.test.advice,com.spring.test.exception.handler"/>  
 
 
     <mvc:annotation-driven />
