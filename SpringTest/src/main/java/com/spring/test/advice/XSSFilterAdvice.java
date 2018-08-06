@@ -46,7 +46,7 @@ public class XSSFilterAdvice implements ResponseBodyAdvice<Object> {
 		
 		value = value.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 		*/
-		return value;//Encode.forHtmlContent(value);
+		return Encode.forHtmlContent(value);
 	}
 	
 	

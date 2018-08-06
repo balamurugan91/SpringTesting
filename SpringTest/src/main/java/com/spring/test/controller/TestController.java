@@ -34,8 +34,8 @@ public class TestController {
 		ValidationUtils.validateModel(testModel);
 
 		filter = testModel.getFilter();
-		System.out.println(filter);
-
+		System.out.println("filter:"+filter);
+		System.out.println("comments:"+testModel.getComments());
 		return filter;
 	}
 	

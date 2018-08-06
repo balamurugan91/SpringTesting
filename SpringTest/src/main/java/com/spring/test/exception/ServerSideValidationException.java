@@ -9,6 +9,7 @@ public class ServerSideValidationException extends Exception {
 
 	public ServerSideValidationException(String message) {
 		super(message);
+		System.out.println(message);
 	}
 	
 	public ServerSideValidationException() {

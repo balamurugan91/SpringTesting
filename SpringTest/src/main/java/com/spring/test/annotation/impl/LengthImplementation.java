@@ -4,15 +4,22 @@ public class LengthImplementation {
 
 	public static boolean validate(String value,int minLength,int maxLength)
 	{
+		System.out.println(value);
+		System.out.println(minLength);
+		System.out.println(maxLength);
+		
 		if(!isBlank(value))
 		{
+			
 			if(minLength > 0 &&  ( value.length() < minLength ) )
 			{
+				System.out.println("min failed");
 				return false;
 			}
 			
 			if(maxLength > 0 && ( value.length() > maxLength ))
 			{
+				System.out.println("max failed");
 				return false;
 			}
 		}

@@ -40,31 +40,31 @@ public class ValidationUtils {
 					if(annotation instanceof NotNull)
 					{
 						if(!NotNullImplementation.validate(value))
-							throw new ServerSideValidationException();
+							throw new ServerSideValidationException("NotNull Failed");
 					}
 					
 					if(annotation instanceof Number)
 					{
 						if(!NumberImplementation.validate(value.toString(), ((Number)annotation).allowEmpty() ))
-							throw new ServerSideValidationException();
+							throw new ServerSideValidationException("Number Failed");
 					}
 					
 					if(annotation instanceof Decimal)
 					{
 						if(!DecimalImplementation.validate(value.toString(), ((Decimal)annotation).allowEmpty() ))
-							throw new ServerSideValidationException();
+							throw new ServerSideValidationException("Decimal Failed");
 					}
 					
 					if(annotation instanceof Date)
 					{
 						if(!DateImplementation.validate(value.toString(), ((Date) annotation).format(), ((Date) annotation).allowEmpty()))
-							throw new ServerSideValidationException();
+							throw new ServerSideValidationException("Date Failed");
 					}
 					
 					if(annotation instanceof Length) 
 					{
-						value = LengthImplementation.validate(value.toString(), ((Length)annotation).minLength(), ((Length)annotation).maxLength() );
-						throw new ServerSideValidationException();
+						if(!LengthImplementation.validate(value.toString(), ((Length)annotation).minLength(), ((Length)annotation).maxLength() ))
+							throw new ServerSideValidationException("Length Failed");
 					}
 					
 					
