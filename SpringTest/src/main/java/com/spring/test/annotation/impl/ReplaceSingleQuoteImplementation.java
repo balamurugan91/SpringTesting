@@ -2,9 +2,12 @@ package com.spring.test.annotation.impl;
 
 public class ReplaceSingleQuoteImplementation {
 
-	public static String implement(String value)
+	public static String implement(Object value)
 	{
-		return value.replaceAll("'", "''");
+		if(value == null)
+			return null;
+		else
+			return value.toString().replaceAll("'", "''");
 	}
 	
 }

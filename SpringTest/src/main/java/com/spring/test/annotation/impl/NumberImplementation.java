@@ -2,12 +2,18 @@ package com.spring.test.annotation.impl;
 
 public class NumberImplementation {
 
-	public static boolean validate(String value, boolean allowEmpty) {
-		if(value.equals("") && allowEmpty == true)
-			return true;
-		else if(value.equals("") && allowEmpty == false)
-			return false;
+	public static boolean validate(Object value, boolean allowEmpty) {
+		
+		if( value == null || value.equals("") )
+		{
+			if(allowEmpty)
+				return true;
+			else
+				return false;
+		}
 		else
-			return value.matches("-?\\d+");
+		{
+			return value.toString().matches("-?\\d+");
+		}
 	}
 }

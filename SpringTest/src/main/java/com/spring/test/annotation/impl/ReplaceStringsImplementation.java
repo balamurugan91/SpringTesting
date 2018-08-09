@@ -4,9 +4,12 @@ import java.util.Arrays;
 
 public class ReplaceStringsImplementation {
 	
-	public static String implement(String value, String[] replaceStrings)
+	public static String implement(Object value, String[] replaceStrings)
 	{
-		return value.replaceAll(Arrays.toString(replaceStrings),"");
+		if(value == null)
+			return null;
+		else
+			return value.toString().replaceAll(Arrays.toString(replaceStrings),"");
 	}
 
 }

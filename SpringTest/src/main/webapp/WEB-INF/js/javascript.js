@@ -10,7 +10,13 @@ $('#submit').live('click',function(){
 		
 		url : 'validateform',
 		type: 'post',
-		data : { filter : $('#filter').val(), comments : $('#comments').val() },
+		data : { 	
+					comments : $('#comments').val(),
+					number : $('#number').val(),
+					decimal : $('#decimal').val(),
+					date : $('#date').val(),
+					filepath: $('#filepath').val()
+				},
 		success: function(response){
 			
 			$('#successdiv').html(response);

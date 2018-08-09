@@ -2,42 +2,27 @@ package com.spring.test.annotation.impl;
 
 public class LengthImplementation {
 
-	public static boolean validate(String value,int minLength,int maxLength)
+	public static boolean validate(Object value,int minLength,int maxLength,boolean allowEmpty)
 	{
-		System.out.println(value);
-		System.out.println(minLength);
-		System.out.println(maxLength);
-		
-		if(!isBlank(value))
+		if( value == null || value.equals("") )
 		{
-			
-			if(minLength > 0 &&  ( value.length() < minLength ) )
+			if(allowEmpty)
+				return true;
+			else
+				return false;
+		}
+		else
+		{
+			if(minLength > 0 &&  ( value.toString().length() < minLength ) )
 			{
-				System.out.println("min failed");
 				return false;
 			}
 			
-			if(maxLength > 0 && ( value.length() > maxLength ))
+			if(maxLength > 0 && ( value.toString().length() > maxLength ))
 			{
-				System.out.println("max failed");
 				return false;
 			}
 		}
 		return true;
 	}
-	
-	public static boolean isBlank(String str) {
-	      int strLen;
-	      if (str == null || (strLen = str.length()) == 0) {
-	          return true;
-	      }
-	      for (int i = 0; i < strLen; i++) {
-	          if ((Character.isWhitespace(str.charAt(i)) == false)) {
-	              return false;
-	          }
-	      }
-	      return true;
-	  }
-	
-	
 }

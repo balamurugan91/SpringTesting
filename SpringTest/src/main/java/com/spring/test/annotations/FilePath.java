@@ -7,10 +7,7 @@ import java.lang.annotation.Target;
 
 @Target( { ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Length {
-
-	int minLength() default 0;
-	int maxLength() default 0;
+public @interface FilePath {
+	String[] validPaths() default {"/apps/dsl/ARBATCH/logs/","/apps/ARBATCH/logs/"};
 	boolean allowEmpty() default true;
-	
 }

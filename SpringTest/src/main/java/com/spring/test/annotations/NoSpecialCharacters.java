@@ -7,10 +7,8 @@ import java.lang.annotation.Target;
 
 @Target( { ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Length {
-
-	int minLength() default 0;
-	int maxLength() default 0;
-	boolean allowEmpty() default true;
+public @interface NoSpecialCharacters {
 	
+    String[] allowedCharacters();
+    boolean allowEmpty() default true;
 }

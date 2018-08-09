@@ -13,8 +13,11 @@
 	</head> 
 	<body>
 	
-		<input type="text" id="filter" size="50"/><br/>
-		<input type="text" id="comments"/><br/>
+		Text Box : <input type="text" id="comments"/><br/>
+		Number : <input type="text" id="number"/><br/>
+		Decimal :<input type="text" id="decimal"/><br/>
+		Date : <input type="text" id="date"/><br/>
+		File Path :<input type="text" id="filepath"/><br/>
 		<input type="button" id="submit" value="submit"/>
 		
 		<div id="errorMessageDiv"></div>

@@ -31,11 +31,27 @@ public class TestController {
 			HttpServletRequest request) throws ServerSideValidationException {
 		String filter = "";
 
+		System.out.println("before");
+		System.out.println(testModel.getComments());
+		System.out.println(testModel.getNumber());
+		System.out.println(testModel.getDecimal());
+		System.out.println(testModel.getDate());
+		System.out.println(testModel.getFilepath());
+		
+		
+		
 		ValidationUtils.validateModel(testModel);
 
-		filter = testModel.getFilter();
-		System.out.println("filter:"+filter);
-		System.out.println("comments:"+testModel.getComments());
+		
+		System.out.println("---------------------------------------------------");
+		System.out.println("after");
+		System.out.println(testModel.getComments());
+		System.out.println(testModel.getNumber());
+		System.out.println(testModel.getDecimal());
+		System.out.println(testModel.getDate());
+		System.out.println(testModel.getFilepath());
+		
+		
 		return filter;
 	}
 	

@@ -11,6 +11,9 @@ public class ServerSideValidationExceptionHandler {
 
 	@ExceptionHandler(ServerSideValidationException.class)
 	public @ResponseBody String serverSideValidationException(final ServerSideValidationException e) {
+		
+		System.out.println("Exception: "+e.getMessage());
+		
 		return e.getMessage();
 	}
 

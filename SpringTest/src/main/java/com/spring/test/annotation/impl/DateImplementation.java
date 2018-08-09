@@ -5,17 +5,25 @@ import java.text.SimpleDateFormat;
 
 public class DateImplementation {
 
-	public static boolean validate(String value, String format, boolean allowEmpty)
+	private static SimpleDateFormat sf;
+	
+	public static boolean validate(Object value, String format, boolean allowEmpty)
 	{
 		try {
 			
-			if(value.equalsIgnoreCase("") && allowEmpty == true)
-				return true;
-			else if(value.equalsIgnoreCase("") && allowEmpty == false)
-				return false;
+			if( value == null || value.equals("") )
+			{
+				if(allowEmpty)
+					return true;
+				else
+					return false;
+			}
 			else
 			{
-				new SimpleDateFormat(format).parse(value);
+				sf = new SimpleDateFormat(format);
+				sf.setLenient(false);
+				sf.parse(value.toString());
+				
 				return true;
 			}
 			
@@ -23,5 +31,4 @@ public class DateImplementation {
 			return false;
 		}
 	}
-	
 }
