@@ -9,6 +9,9 @@ public class NoSpecialCharactersImplementation {
 	{
 		if( value == null || value.equals("") )
 		{
+			
+			System.out.println("inside nospe: empty : "+allowEmpty);
+			
 			if(allowEmpty)
 				return true;
 			else
@@ -19,15 +22,15 @@ public class NoSpecialCharactersImplementation {
 			if(allowedSpecialChars!=null)
 			{
 				String specialCharsString = Arrays.toString(allowedSpecialChars);
-				return Pattern.compile("[^a-z0-9"+specialCharsString.substring(1, specialCharsString.length()-1)+"]", Pattern.CASE_INSENSITIVE)
+				return !(Pattern.compile("[^a-z0-9"+specialCharsString.substring(1, specialCharsString.length()-1)+"]", Pattern.CASE_INSENSITIVE)
 					.matcher(value.toString())
-					.find();
+					.find());
 			}
 			else
 			{
-				return Pattern.compile("[^a-z0-9]", Pattern.CASE_INSENSITIVE)
+				return !(Pattern.compile("[^a-z0-9]", Pattern.CASE_INSENSITIVE)
 						.matcher(value.toString())
-						.find();
+						.find());
 			}
 		}
 	}

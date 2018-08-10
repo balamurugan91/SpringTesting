@@ -15,7 +15,9 @@ $('#submit').live('click',function(){
 					number : $('#number').val(),
 					decimal : $('#decimal').val(),
 					date : $('#date').val(),
-					filepath: $('#filepath').val()
+					filepath: $('#filepath').val(),
+					email: $('#email').val(),
+					phone: $('#phone').val()
 				},
 		success: function(response){
 			

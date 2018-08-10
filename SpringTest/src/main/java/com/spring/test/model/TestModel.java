@@ -2,21 +2,23 @@ package com.spring.test.model;
 
 import com.spring.test.annotations.Date;
 import com.spring.test.annotations.Decimal;
+import com.spring.test.annotations.EMail;
 import com.spring.test.annotations.FilePath;
 import com.spring.test.annotations.NoSpecialCharacters;
 import com.spring.test.annotations.NotNull;
 import com.spring.test.annotations.Number;
+import com.spring.test.annotations.PhoneNumber;
 
 public class TestModel {
 
 	@NotNull
-	@NoSpecialCharacters(allowedCharacters= {" ",""})
+	@NoSpecialCharacters(allowedCharacters= {" ",","})
 	private String comments;
 	
-	@Number(allowEmpty=true)
+	@Number
 	private String number;
 	
-	@Decimal(allowEmpty=false)
+	@Decimal
 	private String decimal;
 	
 	@Date(format="MM/dd/yyyy")
@@ -25,6 +27,11 @@ public class TestModel {
 	@FilePath
 	private String filepath;
 	
+	@EMail
+	private String email;
+	
+	@PhoneNumber
+	private String phone;
 	
 	public String getComments() {
 		return comments;
@@ -55,6 +62,12 @@ public class TestModel {
 	}
 	public void setFilepath(String filepath) {
 		this.filepath = filepath;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

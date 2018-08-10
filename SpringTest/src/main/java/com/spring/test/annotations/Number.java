@@ -38,11 +38,6 @@ import java.lang.annotation.Target;
  * <td>false</td>
  * </tr>
  * <tr>
- * <td></td>
- * <td>false</td>
- * <td>false</td>
- * </tr>
- * <tr>
  * <td>1234</td>
  * <td>true</td>
  * <td>true</td>
