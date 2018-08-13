@@ -22,6 +22,7 @@
 		File Path :<input type="text" id="filepath"/><br/>
 		EMail :<input type="text" id="email"/><br/>
 		Phone :<input type="text" id="phone"/><br/>
+		Filter :<input type="text" id="filter"/><br/>
 		<br/>
 		<input type="button" id="submit" value="submit"/>
 		<br/>

@@ -17,7 +17,8 @@ $('#submit').live('click',function(){
 					date : $('#date').val(),
 					filepath: $('#filepath').val(),
 					email: $('#email').val(),
-					phone: $('#phone').val()
+					phone: $('#phone').val(),
+					filter: $('#filter').val()
 				},
 		success: function(response){
 			

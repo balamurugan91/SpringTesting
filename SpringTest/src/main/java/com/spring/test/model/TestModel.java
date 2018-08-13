@@ -4,6 +4,7 @@ import com.spring.test.annotations.Date;
 import com.spring.test.annotations.Decimal;
 import com.spring.test.annotations.EMail;
 import com.spring.test.annotations.FilePath;
+import com.spring.test.annotations.Filter;
 import com.spring.test.annotations.NoSpecialCharacters;
 import com.spring.test.annotations.NotNull;
 import com.spring.test.annotations.Number;
@@ -32,6 +33,9 @@ public class TestModel {
 	
 	@PhoneNumber
 	private String phone;
+	
+	@Filter
+	private String filter;
 	
 	public String getComments() {
 		return comments;
@@ -68,6 +72,18 @@ public class TestModel {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getFilter() {
+		return filter;
+	}
+	public void setFilter(String filter) {
+		this.filter = filter;
 	}
 
 }

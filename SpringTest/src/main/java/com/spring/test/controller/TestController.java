@@ -37,6 +37,7 @@ public class TestController {
 		System.out.println(testModel.getDecimal());
 		System.out.println(testModel.getDate());
 		System.out.println(testModel.getFilepath());
+		System.out.println(testModel.getFilter());
 		
 		
 		
@@ -50,6 +51,7 @@ public class TestController {
 		System.out.println(testModel.getDecimal());
 		System.out.println(testModel.getDate());
 		System.out.println(testModel.getFilepath());
+		System.out.println(testModel.getFilter());
 		
 		
 		return filter;
